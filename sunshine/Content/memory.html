@@ -1,0 +1,371 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>走在路上</title>
+<style>
+*
+{
+	margin:0;
+	padding:0;
+}
+body
+{
+	background:url(img/bg1.gif);
+}
+#qie
+{
+	position:absolute;
+	left:950px;
+	top:0px;
+	width:300px;
+	height:300px;
+	background:url(img/ahaei.gif);
+
+}
+#dat
+{
+	width:800px;
+	height:170px;
+	position:absolute;
+	left:100px;
+	top:70px;
+}
+#dat ul
+{
+	list-style:none;
+}
+#dat li
+{
+	width:150px;
+	height:150px;
+	float:left;
+	margin:15px;
+	border-radius:5px;
+	border:5px solid green;
+}
+#ig1
+{
+	position:absolute;
+	width:115px;
+	height:157px;
+	left:0;
+	top:0;
+}
+#ig2
+{
+	position:absolute;
+	left:116px;
+	top:0;
+	width:115px;
+	height:157px;
+}
+#sp1
+{
+	text-align:center;
+	color:white;
+	font-size:32px;
+	position:absolute;
+	left:233px;
+	top:60px;
+	width:30px;
+}
+#ig3
+{
+	top:0;
+	width:115px;
+	height:157px;
+	position:absolute;
+	left:270px;
+}
+#ig4
+{   top:0;
+	width:115px;
+	height:157px;
+	position:absolute;
+	left:380px;
+}
+#ig5
+{
+	top:0;
+	width:115px;
+	height:157px;
+	position:absolute;
+	left:540px;
+}
+#ig6
+{
+	top:0;
+	width:115px;
+	height:157px;
+	position:absolute;
+	left:655px;
+}
+#sp2
+{
+	text-align:center;
+	color:white;
+	font-size:32px;
+	position:absolute;
+	left:510px;
+	top:60px;
+	width:30px;
+}
+#wufeng
+{
+	height:200px;
+	width:1100px;
+	position:relative;
+	left:80px;
+	top:300px;
+	border-left:5px solid #C09;
+	border-bottom: #FF0 5px solid;
+	border-right:#F69 5px solid;
+	border-top: #3C6 5px solid;
+	border-radius:10px;
+	overflow:hidden;
+}
+#wufeng ul
+{
+	position:absolute;
+	left:0;
+	top:0;
+	list-style:none;
+}
+#wufeng li
+{
+	float:left;
+	width:250px;
+	height:200px;
+}
+#ta
+{
+	position:absolute;
+	left:730px;
+	top:600px;
+	width:500px;
+	height:500px;
+	background:url(img/agei.gif);
+}
+
+#nine
+{
+	position:absolute;
+	left:80px;
+	top:560px;
+	border-left:7px solid #66F;
+	border-right:7px solid #6C3;
+	border-top:7px solid #F69;
+	border-bottom:7px solid #FF3;
+	border-radius:8px;
+	width:580px;
+	height:600px;
+}
+#nine div
+{
+	padding: 3px;
+	margin: 3px;
+	color: #039;
+}
+</style>
+<script>
+window.onload=function()
+{
+	//时间
+	function todou(t)
+	{
+		if(t>=10)
+		return ''+t;
+		else
+		return ('0'+t);
+	}
+	function tick()
+	{
+		var odate=new Date();
+    var str=todou(odate.getHours())+todou(odate.getMinutes())+todou(odate.getSeconds());
+	var aimg=document.getElementById('dat').getElementsByTagName('img');
+	for(var i=0;i<aimg.length;i++)
+	{
+		//aimg[i].src='img'+str.charAt(i)+'.jpg';
+		aimg[i].src='img/'+str.charAt(i)+'.jpg';
+	}
+	}
+	setInterval(tick,1000);
+	tick();
+}
+
+	//无缝滚动
+/*	var odiv=document.getElementById('wufeng');
+	var oul=odiv.getElementsByTagName('ul')[0];
+	var ali=oul.getElementsByTagName('li');
+	var speed=-2;
+	oul.innerHTML=oul.innerHTML+oul.innerHTML+oul.innerHTML+oul.innerHTML+oul.innerHTML+oul.innerHTML;
+	oul.style.width=ali[0]*ali.length+'px';
+	function move(){
+		if(oul.offsetLeft<-oul.offsetWidth/2)
+		{oul.style.left='0';}
+		if(oul.offsetLeft>0)
+		{
+			oul.style.left=-oul.offsetWidth/2+'px';
+		}
+		oul.style.left=oul.offsetLeft+speed+'px';
+	}
+        var  timer=setInterval(move,30);
+		odiv.onmouseover=function()
+		{
+			clearInterval(timer);
+		}
+		odiv.onmouseout=function()
+		{
+			timer=setInterval(move,30);
+		}
+		document.getElementById('left').onclick=function()
+		{
+			speed=-2;
+		}
+		document.getElementById('right').onclick=function()
+		{
+			speed=2;
+		}*/
+	
+</script>
+
+</head>
+
+<body>
+<a href="main.htm">
+<div id="qie">
+</div>
+</a>
+<div id="dat">
+<img id="ig1" src="img/0.jpg" />
+<img id="ig2" src="img/0.jpg" />
+<span id="sp1">:</span>
+<img id="ig3" src="img/0.jpg" />
+<img id="ig4" src="img/0.jpg" />
+<span id="sp2">:</span>
+<img id="ig5" src="img/0.jpg" />
+<img id="ig6" src="img/0.jpg" />
+</div>
+
+<div id="wufeng">
+<marquee direction="left" behavior="scroll">
+<img src="img/k6.jpg" />
+
+<img src="img/k3.gif" />
+<img src="img/k4.gif" />
+<img src="img/k5.gif" />
+<img src="img/k2.jpg" />
+<img src="img/k1.jpg" />
+<img src="images/hangmo1.jpg">
+<img src="images/xuexiao1.jpg">
+<img src="images/tiyuguan1.jpg">
+<img src="images/99.jpg" />
+<img src="images/chi1.jpg"/>
+<img src="images/wang1.jpg"/>
+<img src="images/dai1.jpg"/>
+<img src="images/shixiong1.jpg" />
+<img src="images/us1.jpg" />
+<img src="images/zhuohuihui1.jpg"/>
+<img src="images/we1.jpg" />
+<img src="images/a1.jpg"/>
+<img src="images/yes1.jpg"/>
+<img src="images/hezhao1.jpg"/>
+<img src="images/tianmimi1.jpg"/>
+<img src="images/bingqilin1.jpg"/>
+<img src="images/44.jpg"/>
+<img src="images/77.jpg"/>
+<img src="images/c1.jpg"/>
+<img src="images/11.jpg"/>
+<img src="images/22.jpg"/>
+<img src="images/33.jpg"/>
+<img src="images/88.jpg"/>
+<img src="images/changge1.jpg">
+<img src="images/ktv1.jpg"/>
+<img src="images/zaijian1.jpg"/>
+<img src="img/k10.jpg" />
+
+</marquee>
+</div>
+<div id="ta">
+</div>
+<div id="nine">
+<div id="a">
+<center>
+<font size="+3" color="#CCFF33">
+2015.我们在一起
+</font>
+</center>
+</div>
+<div id="one">
+<font  color="#CC6633">
+&nbsp;&nbsp;&nbsp;&nbsp;405...机缘巧合地聚集了这样一群逗比...
+</font>
+</div>
+<div id="two">
+<font color="#00CC66">
+&nbsp;&nbsp;&nbsp;&nbsp;吹着风扇，戴着耳机，使命敲着代码的....一人霸占着两椅子，他看我在看他，然后把放在椅子上的风扇挪到了地上，我拿了椅子就到了座位，之间没有说过超过两句话，对师妹一点不热情..所以给的外号是...冷面师兄..
+</font>
+</div>
+<div id="three">
+<font color="#CC3300">&nbsp;&nbsp;&nbsp;&nbsp;胡老师让大师兄给讲论文，格兰杰因果关系和新型因果关系,醉~弊病...一听课就范困....师兄对胡老师布置的任务太认真做了...</font>
+</div>
+<div id="four">
+<font color="#9966CC">
+&nbsp;&nbsp;&nbsp;&nbsp;第一次见师姐，感觉好亲切的，实验室唯一的师姐~刚好坐隔壁，又都爱吃...真好~
+</font>
+</div>
+<div id="five">
+<font color="#3399CC">
+&nbsp;&nbsp;&nbsp;&nbsp;过了很久才知道，后面还坐着一个大师兄。一直以为后面的是老师..敢跟胡老师这么近距离..
+</font>
+</div>
+<div id="six">
+<font color="#99CC99">
+&nbsp;&nbsp;&nbsp;&nbsp;师兄你桌子要不要擦？不用，乱乱的，写代码才有灵感.我才知道，原来我写不出代码是我桌子不够乱...难怪卓慧写代码写那么带劲，是因为桌子够乱.
+</font>
+</div>
+<div id="seven">
+<font color="#990033">
+&nbsp;&nbsp;&nbsp;&nbsp;师姐看跑男，牙齿都要笑掉了...炫迈口香糖~根本停不下来..
+</font>
+</div>
+<div>
+<font color="#CC33CC">
+&nbsp;&nbsp;&nbsp;&nbsp;到处闯空间，找不到图片资源，男生果然跟女生不一样....
+</font>
+</div>
+<div >
+<font color="#009966">
+&nbsp;&nbsp;&nbsp;&nbsp;戴师兄经典语录是：这都不会啊，你怎么这么笨呢？！你们女生能不能有点节操啊.
+</font>
+</div>
+<div>
+<font color=pink>
+&nbsp;&nbsp;&nbsp;&nbsp;杀人游戏，玩的好嗨，实验室人口众多的才能玩得起来吧。
+</font>
+</div>
+<div>
+<font color="#FFFF00">
+&nbsp;&nbsp;&nbsp;&nbsp;师姐说一直不喜欢在ktv唱歌，然后那天就在ktv唱嗨了，就那么喜欢上了范玮琪的歌..
+</font>
+</div>
+<div>
+<font color=purple>
+&nbsp;&nbsp;&nbsp;&nbsp;如果一个人在你的生命中曾经出现过，或悲，或喜，都是回忆..漫天星辰，很久很久以后，当你仰望星辰，是不是还会想起...
+</font>
+</div>
+<div>
+<font color="#00CCCC">
+&nbsp;&nbsp;&nbsp;&nbsp;阳光...每天都是新的一天，未来，握在手中，记得，要开心。
+</font>
+</div>
+<div>
+<font color=red size="+2">
+&nbsp;&nbsp;&nbsp;&nbsp;加油 and 加油！
+</font>
+</div>
+</div>
+<embed src="backgroundMusic/纯音乐 - 风居住的街道.mp3" loop="true" hidden="true">
+</body>
+</html>

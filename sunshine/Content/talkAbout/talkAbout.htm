@@ -1,0 +1,583 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>谈谈，谈一谈</title>
+<style>
+*
+{
+	padding:0;
+	margin:0;
+}
+
+body
+{
+	background:url(../img/ha.gif);
+}
+
+#full
+{
+	width:500px;
+	height:800px;
+	background: #FC9;
+	border:6px solid #690;
+	border-radius:8px;
+	position:absolute;
+	left:370px;
+	top:50px;
+}
+#name
+{
+	width:500px;
+	height:24px;
+	font:"Courier New", Courier, monospace;
+	color:#66C;
+	font-size:19px;
+}
+#small
+{
+	width:500px;
+	height:20px;
+	position:absolute;
+	top:24px;
+}
+#nickInput
+{
+	height:20px;
+	width:90px;
+	position:absolute;
+	left:5px;
+	top:2px;
+	border:3px solid #690;
+	border-radius:8px;
+}
+#smallul
+{
+	position:absolute;
+	left:110px;
+	height:20px;
+	top:0px;
+	list-style:none;
+}
+#smallul li
+{   
+	float:left;
+	margin:3px;
+	border:1px solid #69C;
+	border-radius:5px;
+	list-style:none;
+	opacity:0.3;
+	filter:alpha(opacity:30);
+}
+#smallul li:hover
+{
+	cursor:pointer;
+}
+#content
+{
+	position:absolute;
+	left:5px;
+	top:60px;
+	width:360px;
+	height:140px;
+}
+#iputContent
+{
+	position:absolute;
+	left:0px;
+	top:0px;
+	width:480px;
+	height:108px;
+	border:3px solid #696;
+	border-radius:8px;
+	overflow:hidden;
+}
+#a
+{
+	position:absolute;
+	left:180px;
+	top:120px;
+	font:"Courier New", Courier, monospace;
+	color:#6C0;
+}
+span
+{
+	font:"Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	color:#F00;
+	font-size:24px;
+}
+#b1
+{
+	width:80px;
+	height:30px;
+	position:absolute;
+	left:390px;
+	top:120px;
+	font-size:18px;
+	color:#C6C;
+	border: 3px solid #690;
+	border-radius:8px;
+	background:#9C6;
+}
+#show
+{
+	width:480px;
+	height:570px;
+	position:absolute;
+	left:14px;
+	top:220px;
+
+}
+#show ul
+{
+	position:absolute;
+	left:0;
+	top:0;
+	list-style:none;
+	width:475px;
+	height:570px;
+	overflow:hidden;
+}
+#show li
+{
+	border:3px solid #9C0;
+	margin:5px;
+	border-radius:8px;
+	position:relative;
+	height:60px;
+}
+
+#ig
+{
+	position:absolute;
+	left:3px;
+	top:8px;
+	width:45px;
+	height:45px;
+}
+#yourName
+{
+	left:50px;
+	top:3px;
+	width:100px;
+	height:20px;
+	position:absolute;
+	font:Verdana, Geneva, sans-serif;
+	color:#63C;
+}
+#uw li:hover
+{
+	cursor:pointer;
+}
+#talk
+{
+	position:absolute;
+	left:140px;
+	top:3px;
+	font:Georgia, "Times New Roman", Times, serif;
+	color:#63C;
+}
+#data
+{
+	position:absolute;
+	left:50px;
+	top:38px;
+	color:#909;
+}
+#delete
+{
+	position:absolute;
+	left:350px;
+	top:38px;
+	font:"MS Serif", "New York", serif;
+	font-size:16px;
+	color:#F03;
+	display:none;
+}
+#delete:hover
+{
+	cursor:pointer;
+}
+#bo
+{
+	position:absolute;
+	width:100%;
+	bottom:0;
+	text-align:center;
+}
+#wh
+{
+	width:100%;
+	height:200px;
+	position:absolute;
+	top:850px;
+	left:100px;
+}
+#ren
+{
+	width:307px;
+	height:400px;
+	position:absolute;
+	left:0;
+	top:450px;
+	background:url(../img/dong1.gif);
+}
+#wo
+{
+	width:322px;
+	height:314px;
+	position:absolute;
+	background:url(../img/wo.gif);
+	left:900px;
+	top:540px;
+
+}
+#giveme
+{
+	width:300px;
+	height:300px;
+	position:absolute;
+	background:url(../img/ahaei.gif);
+	left:890px;
+	top:100px;
+}
+#giveyou
+{
+	width:300px;
+	height:300px;
+	position:absolute;
+	background:url(../img/ahaei.gif);
+	left:50px;
+	top:100px;
+}
+#giveme:hover
+{
+	cursor:pointer;
+}
+#giveyou:hover
+{
+	cursor:pointer;
+}
+</style>
+<script src="move2.js"></script>
+<script>
+//计算剩余能够输入的文字数量
+function limit(obj, max, show)
+		{
+			var remain= max-obj.value.length;
+			var s_w = show;
+			document.getElementById(s_w).innerHTML=remain;
+		}
+	
+window.onload=function()
+{
+	var ali=document.getElementById('smallP').getElementsByTagName('li');//小头像图标
+	var obt=document.getElementById('b1');//发布的按钮
+	var tex=document.getElementById('iputContent');//textarea中的内容
+	var uww=document.getElementById('uw');//消息的ul层
+	var wawawa=uww.getElementsByTagName('li');
+	var del=document.getElementsByTagName('a');
+	var opan=document.getElementById('sw');
+	
+	var nn=document.getElementById('nickInput');//昵称输入框
+	var t=['英纳格','Burke','Arthur','夏日香气','ΜàΓΚ','甡侞嗄埖','liu','锦毛鼠','soul','无风晴','香茗','膤落嘸殸','ぉ雪绫Θ焱'];
+	
+	//鼠标经过图像变透明度
+	for(var i=0;i<ali.length;i++)
+	{
+		ali[i].index=i;
+		ali[i].onmouseover=function()
+		{
+			for(var i=0;i<ali.length;i++)
+			ali[i].style.opacity=0.3;
+			ali[this.index].style.opacity=1;
+			nn.value=t[this.index];
+		}
+		
+	}
+	//点击发布消息
+	obt.onclick=function()
+	{  
+	   //插入新的li
+		var oli=document.createElement('li');
+		if(uww.children.length>0)
+		{
+			uww.insertBefore(oli,uww.children[0]);
+		}
+		else
+		{
+			uww.appendChild(oli);
+		}
+		
+		//动态显示li
+		oli.style.height='0';
+		startMove(oli,{height:60},function()
+		{
+			startMove(oli,{opacity:100});
+			});
+			
+		//生成4个div，并且设置div的id控制其位置 通过setAttribute来设置
+		var dv1=document.createElement('div');
+		var dv2=document.createElement('div');
+		var dv3=document.createElement('div');
+		var dv4=document.createElement('div');
+		var dv5=document.createElement('div');
+		
+		var n1=oli.appendChild(dv1);
+		var n2=oli.appendChild(dv2);
+		var n3=oli.appendChild(dv3);
+		var n4=oli.appendChild(dv4);
+		var n5=oli.appendChild(dv5);
+		
+		n1.setAttribute('id','ig');
+		n2.setAttribute('id','yourName');
+		n3.setAttribute('id','talk');
+		n4.setAttribute('id','data');
+		n5.setAttribute('id','delete');
+	
+		
+		n2.innerHTML=nn.value+":";
+		var odate=new Date();
+		var w=odate.getHours();
+		var k=odate.getMinutes();
+		if((parseInt(k))<10&&(parseInt(w)<10))
+		{
+			
+		n4.innerHTML=parseInt(odate.getMonth())+1+"月"+parseInt(odate.getDate())+"日"+""+'0'+parseInt(w)+":"+'0'+parseInt(k);
+		n3.innerHTML=tex.value;
+		}
+		else if((parseInt(k))>10&&(parseInt(w)<10))
+		{
+			n4.innerHTML=parseInt(odate.getMonth())+1+"月"+parseInt(odate.getDate())+"日"+""+'0'+parseInt(w)+":"+parseInt(k);
+		n3.innerHTML=tex.value;
+		}
+		else if((parseInt(k))<10&&(parseInt(w)>10))
+		{
+			n4.innerHTML=parseInt(odate.getMonth())+1+"月"+parseInt(odate.getDate())+"日"+""+parseInt(w)+":"+'0'+parseInt(k);
+		n3.innerHTML=tex.value;
+		}
+		else
+		{
+			n4.innerHTML=parseInt(odate.getMonth())+1+"月"+parseInt(odate.getDate())+"日"+""+parseInt(w)+":"+parseInt(k);
+		n3.innerHTML=tex.value;
+		}
+		tex.value='';
+		
+		var aaa=document.createElement('a');
+		var k=n5.appendChild(aaa);
+		k.innerHTML="删除"
+	  
+	    var oha=document.createElement('img');
+		var na=n1.appendChild(oha);
+	
+		//大头像的显示
+		for(var i=0;i<ali.length;i++)
+		{
+			if(ali[i].style.opacity==1)
+			{
+			  na.src="big"+(i+1)+'.jpg';
+			  break;
+			}
+		}
+		//由于添加了li后，li的数量发生变化，所以重新再执行
+	 tab();
+	   
+	   //删除了li后，li数量发生变化，所以删除要重新执行
+	 for(var i=0;i<del.length;i++)
+	{
+		del[i].onclick=function()
+		{
+		  uww.removeChild(this.parentNode.parentNode);
+		  tab();
+		  
+		}
+	}
+	 opan.innerHTML="140"
+	 
+	}
+	 
+	 //鼠标经过，显示li中的背景变换，并且显示删除的标志
+	  function tab()
+	  {
+	  for(var i=0;i<wawawa.length;i++)
+	  {
+		  wawawa[i].index=i;
+	  wawawa[i].onmouseover=function()
+	  {
+		  for(var i=0;i<wawawa.length;i++)
+		  {
+			  wawawa[i].style.background='';
+			  del[i].parentNode.style.display='none';
+		  }
+		wawawa[this.index].style.background="#FF9";
+		del[this.index].parentNode.style.display='block';
+	  }
+	  }
+	 uww.onmouseout=function()
+	 {
+		  for(var i=0;i<wawawa.length;i++)
+		  {
+			   wawawa[i].style.background='';
+			  del[i].parentNode.style.display='none';
+		  }
+	 }
+	  }
+	  tab();
+	
+	//删除按钮
+	for(var i=0;i<del.length;i++)
+	{
+		del[i].onclick=function()
+		{
+		  uww.removeChild(this.parentNode.parentNode);
+		  tab();  
+		}
+	}
+	//输入ctrl+Enter发送消息
+	tex.onkeydown=function(ev)
+	{
+		var e=ev||event;
+		if(e.keyCode==13&&e.ctrlKey)
+		{
+			tt();
+		}
+	}
+	
+	//与点击发送按钮代码一样
+	function tt()
+	{
+		 //插入新的li
+		var oli=document.createElement('li');
+		if(uww.children.length>0)
+		{
+			uww.insertBefore(oli,uww.children[0]);
+		}
+		else
+		{
+			uww.appendChild(oli);
+		}
+		
+		//动态显示li
+		oli.style.height='0';
+		startMove(oli,{height:60},function()
+		{
+			startMove(oli,{opacity:100});
+			});
+			
+		//生成4个div，并且设置div的id控制其位置 通过setAttribute来设置
+		var dv1=document.createElement('div');
+		var dv2=document.createElement('div');
+		var dv3=document.createElement('div');
+		var dv4=document.createElement('div');
+		var dv5=document.createElement('div');
+		
+		var n1=oli.appendChild(dv1);
+		var n2=oli.appendChild(dv2);
+		var n3=oli.appendChild(dv3);
+		var n4=oli.appendChild(dv4);
+		var n5=oli.appendChild(dv5);
+		
+		n1.setAttribute('id','ig');
+		n2.setAttribute('id','yourName');
+		n3.setAttribute('id','talk');
+		n4.setAttribute('id','data');
+		n5.setAttribute('id','delete');
+	
+		
+		n2.innerHTML=nn.value+":";
+			var odate=new Date();
+		var w=(odate.getMonth()+1)+"月"+odate.getDate()+"日"+""+odate.getHours()+":"+odate.getMinutes();
+		n4.innerHTML=w;
+		n3.innerHTML=tex.value;
+		tex.value='';
+		
+		var aaa=document.createElement('a');
+		var k=n5.appendChild(aaa);
+		k.innerHTML="删除"
+	  
+	    var oha=document.createElement('img');
+		var na=n1.appendChild(oha);
+	
+		//大头像的显示
+		for(var i=0;i<ali.length;i++)
+		{
+			if(ali[i].style.opacity==1)
+			{
+			  na.src="big"+(i+1)+'.jpg';
+			  break;
+			}
+		}
+		//由于添加了li后，li的数量发生变化，所以重新再执行
+	 tab();
+	   
+	   //删除了li后，li数量发生变化，所以删除要重新执行
+	 for(var i=0;i<del.length;i++)
+	{
+		del[i].onclick=function()
+		{
+		  uww.removeChild(this.parentNode.parentNode);
+		  tab();
+		}
+	}
+	}
+	
+}
+</script>
+</head>
+<body>
+<div id="full">
+<div id="name">来，说说你最近发生的事情</div>
+<div id="small">
+<input type="text" id="nickInput"  />
+<div id="smallul">
+<ul id="smallP">
+<li><img src="small1.jpg"/></li>
+<li><img src="small2.jpg"/></li>
+<li><img src="small3.jpg"/></li>
+<li><img src="small4.jpg"/></li>
+<li><img src="small5.jpg"/></li>
+<li><img src="small6.jpg"/></li>
+<li><img src="small7.jpg"/></li>
+<li><img src="small8.jpg"/></li>
+<li><img src="small9.jpg"/></li>
+<li><img src="small10.jpg"/></li>
+<li><img src="small11.jpg"/></li>
+<li><img src="small12.jpg"/></li>
+<li><img src="small13.jpg" /></li>
+</ul>
+</div>
+</div>
+<div id="content">
+  <textarea  id="iputContent" cols="42" rows="7" onKeyUp="limit(this,140,'sw')"  ></textarea>
+<div id="a">您还可以输入<span id="sw">140</span>个字</div><input type="button" id="b1" value="发布" />
+</div>
+<div id="show">
+<ul id="uw">
+<li><div id="ig"><img src="big13.jpg" /></div><div id="yourName">ぉ雪绫Θ焱:</div><div id="talk">点击企鹅返回首页...输入ctrl+Enter可以发送消息。</div><div id="data">4月12日  14:02</div><div id="delete"><a>删除</a></div></li>
+<li><div id="ig"><img src="big3.jpg" /></div><div id="yourName">Arthur:</div><div id="talk">这都不会啊，你怎么这么笨呢...</div><div id="data">3月17日  07:12</div><div id="delete"><a>删除</a></div></li>
+<li><div id="ig"><img src="big2.jpg" /></div><div id="yourName">Burke:</div><div id="talk">其实胡老师说的因果关系是有错误的，师妹们加油推翻他</div><div id="data">2月05日  16:12</div><div id="delete"><a>删除</a></div></li>
+<li><div id="ig"><img src="big8.jpg" /></div><div id="yourName">锦毛鼠:</div><div id="talk">我还是做个安静的美男子吧</div><div id="data">12月17日  08:52</div><div id="delete"><a>删除</a></div></li>
+<li><div id="ig"><img src="big9.jpg" /></div><div id="yourName">soul：</div><div id="talk">我能不能来你这边吹头发，我宿舍没有人..</div><div id="data">3月17日  19:37</div><div id="delete"><a>删除</a></div></li>
+<li><div id="ig"><img src="big11.jpg" /></div><div id="yourName">香茗：</div><div id="talk">你丫的，再欺负我，你们以后洗衣服不要来我宿舍了</div><div id="data">1月04日  11:54</div><div id="delete"><a>删除</a></div></li>
+<li><div id="ig"><img src="big4.jpg" /></div><div id="yourName">夏日香气：</div><div id="talk">这个格兰杰因果关系吧，其实是有问题的</div><div id="data">3月25日  18:45</div><div id="delete"><a>删除</a></div></li>
+<li><div id="ig"><img src="big1.jpg" /></div><div id="yourName">英格纳：</div><div id="talk">哼哼..喝不喝，师兄都敬你酒了，你都不喝.</div><div id="data">4月1日  21:32</div><div id="delete"><a>删除</a></div></li>
+<li><div id="ig"><img src="big6.jpg" /></div><div id="yourName">甡侞嗄埖:</div><div id="talk">其实哥也是有实力的人呐..</div><div id="data">4月15日  20:52</div><div id="delete"><a>删除</a></div></li>
+</ul>
+</div>
+</div>
+</div>
+<div id="ren">
+</div>
+<div id="wo">
+</div>
+<a href="../main.htm">
+<div id="giveme">
+</div>
+</a>
+<a href="../main.htm">
+<div id="giveyou">
+</div>
+</a>
+<embed src="../backgroundMusic/轩辕剑 - 三个人的时光.mp3" loop="true" hidden="true">
+</body>
+</html>

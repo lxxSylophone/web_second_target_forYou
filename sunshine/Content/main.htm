@@ -1,0 +1,809 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>青春纪念册</title>
+<style>
+*
+{
+	margin:0;
+	padding:0;
+	text-align:center;
+	font:Tahoma, Geneva, sans-serif;
+}
+body
+{
+	background:url(img/bg1.gif);
+}
+#header
+{
+	width:600px;
+	height:250px;
+	position:absolute;
+	left:330px;
+	top:20px;
+	border:8px solid #F99;
+	border-radius:8px;
+	overflow:hidden;
+}
+#headerul
+{  
+ list-style:none;
+	width:600px;
+	height:250px;
+	position:absolute;
+	left:0;
+	top:0;
+	
+}
+#headerul li
+{
+	width:600px;
+	height:250px;
+}
+#number
+{
+	width:200px;
+	height:25px;
+	position:absolute;
+	left:410px;
+	top:215px;
+}
+#numberul
+{
+	width:200px;
+	height:20px;
+	position:absolute;
+	left:0;
+	top:0;
+	list-style:none;
+}
+#numberul li
+{
+	float:left;
+	width:20px;
+	height:20px;
+	margin-right:5px;
+	background:#FC3;
+	border:3px solid #6C6;
+	border-radius:20px;
+}
+#numberul li:hover
+{
+	background:#F96;
+	cursor:pointer;
+}
+
+#navigator
+{
+	width:757px;
+	height:60px;
+	position:absolute;
+	left:250px;
+	top:300px;
+	border:6px solid #693;
+	border-radius:8px;
+}
+#navigator div
+{
+	width:100px;
+	height:50px;
+	margin-left:7px;
+	font:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-size:16px;
+	float:left;
+	border-radius:8px;
+	margin-top:5px;
+}
+#navigator div:hover
+{
+	cursor:pointer;
+}
+#nav
+{
+	width:760px;
+	height:250px;
+	position:absolute;
+	left:260px;
+	top:370px;
+}
+#w1
+{
+	width:100px;
+	height:100px;
+	position:absolute;
+	top:0px;
+	left:0px;
+	background:url(img/navi.jpg);
+	opacity:0;
+	filter:alpha(opacity:0);
+	border-radius:8px;
+	z-index:3;
+}
+#w1 ul
+{
+	list-style:none;
+	width:100px;
+	height:100px;
+	position:absolute;
+	left:0;
+	top:0;
+	
+}
+
+#w1 li
+{width:100px;
+height:32px;
+font:Arial, Helvetica, sans-serif;
+color:purple;
+font-size:18px;
+	}
+	#w2
+{
+	width:100px;
+	height:200px;
+	position:absolute;
+	top:0px;
+	left:110px;
+	background:url(img/navi5.jpg);
+	border-radius:8px;
+	opacity:0;
+	filter:alpha(opacity:0);
+	z-index:3;
+}
+#w2 ul
+{
+	width:100px;
+	height:200px;
+	position:absolute;
+	left:0;
+	top:0;
+	list-style:none;
+}
+#w2 li
+{width:100px;
+height:32px;
+font:"Palatino Linotype", "Book Antiqua", Palatino, serif;
+color:#F69;
+font-size:18px;
+	}
+	
+		#w3
+{
+	width:100px;
+	height:200px;
+	position:absolute;
+	top:0px;
+	left:220px;
+	background:url(img/navi6.jpg);
+	border-radius:8px;
+	opacity:0;
+	filter:alpha(opacity:0);
+	z-index:3;
+}
+#w3 ul
+{
+	list-style:none;
+	width:100px;
+	height:200px;
+	position:absolute;
+	left:0;
+	top:0;
+}
+#w3 li
+{
+	width: 100px;
+	height: 32px;
+	font: Arial, Helvetica, sans-serif;
+	color: #F39;
+	font-size: 18px;
+	}
+	
+			#w4
+{
+	width:100px;
+	height:200px;
+	position:absolute;
+	top:0px;
+	left:325px;
+	background:url(img/navi8.jpg);
+	border-radius:8px;
+	opacity:0;
+	filter:alpha(opacity:0);
+    z-index:3;
+}
+#w4 ul
+{
+	list-style:none;
+	width:100px;
+	height:200px;
+	position:absolute;
+	left:0;
+	top:0;
+}
+#w4 li
+{
+	width: 100px;
+	height: 32px;
+	font: Arial, Helvetica, sans-serif;
+	color: #0C6;
+	font-size: 18px;
+	}
+	
+			#w5
+{
+	width:100px;
+	height:100px;
+	position:absolute;
+	top:0px;
+	left:431px;
+	background:url(img/navi7.jpg);
+	border-radius:8px;
+	opacity:0;
+	filter:alpha(opacity:0);
+	z-index:3;
+}
+#w5 ul
+{
+	list-style:none;
+	width:100px;
+	height:100px;
+	position:absolute;
+	left:0;
+	top:0;
+}
+#w5 li
+{
+	width: 100px;
+	height: 32px;
+	font:Arial, Helvetica, sans-serif;
+	color: #006;
+	font-size: 18px;
+	}
+	
+		#w6
+{
+	width:100px;
+	height:200px;
+	position:absolute;
+	top:0px;
+	left:540px;
+	background:url(img/navi2.jpg);
+	border-radius:8px;
+	opacity:0;
+	filter:alpha(opacity:0);
+	z-index:3;
+}
+#w6 ul
+{
+	list-style:none;
+	width:100px;
+	height:200px;
+	position:absolute;
+	left:0;
+	top:0;
+}
+#w6 li
+{
+	width: 100px;
+	height: 32px;
+	font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	color: #C69;
+	font-size: 18px;
+	}
+	
+	#w7
+{
+	width:100px;
+	height:200px;
+	position:absolute;
+	top:0px;
+	left:650px;
+	background:url(img/navi1.jpg);
+	border-radius:8px;
+	opacity:0;
+	filter:alpha(opacity:0);
+	z-index:3;
+}
+#w7 ul
+{
+	list-style:none;
+	width:100px;
+	height:200px;
+	position:absolute;
+	left:0;
+	top:0;
+}
+#w7 li
+{
+	width: 100px;
+	height: 32px;
+	font: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	color: #36C;
+	font-size: 18px;
+	}
+#content
+{
+	width:1030px;
+	height:735px;
+	position:absolute;
+	border-left:8px solid #66C;
+	border-right:8px solid yellow;
+	border-top:8px solid green;
+	border-bottom:8px solid red;
+	border-radius:8px;
+	left:100px;
+	top:390px;
+	background:url(img/bg.gif);
+}
+#bottom
+{
+	width:100%;
+	position:absolute;
+	bottom:-100px;
+	text-align:center;
+}
+
+#left
+{
+	width:320px;
+	height:300px;
+	position:absolute;
+	left:0;
+	top:0;
+	background:url(img/bg5.gif);
+}
+#leftb
+{
+	width:250px;
+	height:60px;
+	position:absolute;
+	left:0;
+	top:300px;
+	background:url(img/bg3.gif);
+}
+#right
+{
+	width:300px;
+	height:300px;
+	position:absolute;
+	right:0;
+	top:0;
+	background:url(img/bgright.jpg);
+
+}
+#w
+{
+	width:250px;
+	height:735px;
+	position:absolute;
+	left:260px;
+	top:8px;
+	z-index:2;
+}
+#us
+{
+	position:absolute;
+	left:0;
+	top:0;
+	width:250px;
+	height:735px;
+	list-style:none;
+}
+#us li
+{
+	width:250px;
+	height:100px;
+	margin-bottom:15px;
+	border:4px solid #F6F;
+	border-radius:8px;	
+	position:relative;
+}
+#aha
+{
+	position:absolute;
+	top:8px;
+	left:525px;
+	width:250px;
+	height:730px;
+}
+#aka
+{
+	position:absolute;
+	left:0;
+	top:0;
+	width:250px;
+	height:735px;
+	list-style:none;
+}
+#aka li
+{
+	width:250px;
+	height:100px;
+	margin-bottom:15px;
+	border:4px solid #66C;
+	border-radius:8px;	
+	position:relative;
+}
+#aimg
+{
+	width:80px;
+	height:80px;
+	position:absolute;
+	left:5px;
+	border:2px solid #6666CC;
+	border-radius:8px;
+	top:5px;
+}
+#aimg:hover
+{
+	cursor:pointer;
+}
+#nickName
+{
+	width: 120px;
+	height: 20px;
+	position: absolute;
+	left: 70px;
+	top: 10px;
+	font: Arial, Helvetica, sans-serif;
+	color: #00FF00;
+	font-size: 18px;
+}
+#talk
+{
+	width:150px;
+	height:40px;
+	position:absolute;
+	left:100px;
+	top:40px;
+	font:Tahoma, Geneva, sans-serif;
+	font-size:18px;
+	color:#933;
+	text-align:left;
+}
+#what
+{
+	position:absolute;
+	border:5px solid #096;
+	border-radius:8px;
+	left:200px;
+	top:200px;
+	width:200px;
+	height:355px;
+	z-index:1000;
+	display:none;
+}
+#whatul
+{
+	position:absolute;
+	top:0;
+	left:0;
+	width:200px;
+	height:355px;
+	list-style:none;
+}
+#whatul li
+{
+	position:absolute;
+	left:0;
+	top:0;
+	width:200px;
+	height:355px;
+}
+.current
+{
+	z-index:9999;
+}
+#how
+{
+	position:absolute;
+	border:5px solid  #096;
+	border-radius:8px;
+	left:200px;
+	top:200px;
+	width:320px;
+	height:240px;
+	z-index:1000;
+	display:none;
+}
+#howul
+{
+	position:absolute;
+	top:0;
+	left:0;
+	width:320px;
+	height:240px;
+	list-style:none;
+}
+#howul li
+{
+	position:absolute;
+	left:0;
+	top:0;
+	width:320px;
+	height:240px;
+}
+
+</style>
+<script src="move2.js"></script>
+<script>
+window.onload=function()
+{   //转盘效果
+	var oheader=document.getElementById('header');
+	var oheaderul=document.getElementById('headerul');
+	var aheaderimg=oheaderul.getElementsByTagName('li');
+	var onumber=document.getElementById('number');
+	var onumberli=onumber.getElementsByTagName('li');
+	var now=0;
+	var timer=null;
+	for(var i=0;i<onumberli.length;i++)
+	{
+		onumberli[i].index=i;
+		onumberli[i].onmouseover=function()
+		{
+			now=this.index;
+			tab();
+			for(var i=0;i<onumberli.length;i++)
+			 { onumberli[i].style.background="#6C6";}
+			  onumberli[now].style.background="#F96";
+		}
+	}
+	//轮盘效果
+	function tab()
+	{
+		startMove(oheaderul,{top:-250*now});
+	}
+    //下一张图片
+	function next()
+	{
+		now++;
+		if(now==onumberli.length)
+		now=0;
+		tab();
+		for(var i=0;i<onumberli.length;i++)
+		{
+		  onumberli[i].style.background="#6C6";
+		}
+		onumberli[now].style.background="#F96";
+	}
+	//自动播放
+   timer=setInterval(next,2000);
+  oheader.onmouseover=function()
+  {
+	  clearInterval(timer);
+  }
+  oheader.onmouseout=function()
+  {
+	  timer=setInterval(next,2000);
+  }
+	//动态导航
+	var onav=document.getElementById('navigator');
+	var odiv=onav.getElementsByTagName('div');
+	var adivli=document.getElementById('nav').getElementsByTagName('div');
+	var navli=document.getElementById('nav').getElementsByTagName('li');
+	var t=null;
+	for(var i=0;i<odiv.length;i++)
+	{
+		odiv[i].index=i;
+		odiv[i].onmouseover=function()
+		{
+			for(var i=0;i<adivli.length;i++)
+			 adivli[i].style.opacity=0;
+			 	adivli[this.index].style.height=0;
+			startMove(adivli[this.index],{opacity:100,height:150});
+		}
+		odiv[i].onmouseout=function()
+		{
+		   startMove(adivli[this.index],{opacity:0,height:0});
+		}
+		//鼠标经过显示对应的div层
+		adivli.onmouseover=function(event)
+		{
+		  var e=event||window.event;
+		  e.cancelBubble=true;
+		  clearTimeout();
+		}
+	}
+	
+	//鼠标经过头像的图片，显示相应的大图,左半部分
+	var usimg=document.getElementById('w').getElementsByTagName('img');
+	var whatdiv=document.getElementById('what');
+	var whatimg=whatdiv.getElementsByTagName('li');
+	 for(var i=0;i<usimg.length;i++)
+    {
+		usimg[i].index=i;
+		usimg[i].onmouseover=function()
+		{
+			whatdiv.style.display='block';
+			for(var j=0;j<whatimg.length;j++)
+			{
+				whatimg[j].className='';
+			}
+			whatimg[this.index].className='current';
+		}
+		usimg[i].onmouseout=function()
+		{
+			whatdiv.style.display='none';
+		}
+		usimg[i].onmousemove=function(event)
+		{
+			var e=event||window.event;
+			var w=document.documentElement.offsetWidth-e.clientX;
+			whatdiv.style.top=e.clientY+'px';
+			whatdiv.style.left=e.clientX+20+'px';
+		}
+	}
+	
+	//鼠标经过头像的图片，显示相应的大图，右半部分
+	var uwimg=document.getElementById('aha').getElementsByTagName('img');
+	var howdiv=document.getElementById('how');
+	var howimg=howdiv.getElementsByTagName('li');
+	 for(var i=0;i<uwimg.length;i++)
+    {
+		uwimg[i].index=i;
+		uwimg[i].onmouseover=function()
+		{
+			howdiv.style.display='block';
+			for(var j=0;j<howimg.length;j++)
+			{
+				howimg[j].className='';
+			}
+			howimg[this.index].className='current';
+		}
+		uwimg[i].onmouseout=function()
+		{
+			howdiv.style.display='none';
+		}
+		uwimg[i].onmousemove=function(event)
+		{
+			var e=event||window.event;
+			var w=document.documentElement.offsetWidth-e.clientX;
+			howdiv.style.top=e.clientY+'px';
+			howdiv.style.left=e.clientX+20+'px';
+		}
+	}
+
+}
+</script>
+</head>
+
+<body>
+<div id="header">
+<ul id="headerul">
+<li><img src="img/time6.jpg" /></li>
+<li><img src="img/time7.jpg" /></li>
+<li><img src="img/time3.jpg" /></li>
+<li><img src="img/time8.jpg" /></li>
+<li><img src="img/time1.jpg" /></li>
+<li><img src="img/time5.jpg" /></li>
+</ul>
+<div id="number">
+<ul id="numberul">
+<li>1</li>
+<li>2</li>
+<li>3</li>
+<li>4</li>
+<li>5</li>
+<li>6</li>
+</ul>
+</div>
+</div>
+<div id="navigator">
+<a href="pictures.html"><div style="background:url(img/navi4y.jpg)"></div></a>
+<a href="game.html">
+<div style="background:url(img/navi5y.jpg)"></div>
+</a>
+<a href="talkAbout/talkAbout.htm"><div style="background:url(img/navi6y.jpg)"></div>
+</a>
+<a href="memory.html"><div style="background:url(img/navi8y.jpg)"></div></a>
+<div style="background:url(img/navi7y.jpg)"></div>
+<a href="../index.html"><div style="background:url(img/navi2y.jpg)"></div>
+</a>
+<a href="main.htm"><div style="background:url(img/navi1y.jpg)"></div>
+</div>
+</a>
+<div id="nav">
+<div id="w1">
+<ul>
+<li>甜の相册</li>
+<li>幸福瞬间</li>
+<li>甜甜的❤</li>
+</ul>
+</div>
+<div id="w2">
+<li>我❤你</li>
+<li>与相约</li>
+<li>马兰坡</li>
+</div>
+<div id="w3">
+<ul>
+<li>我┆们の</li>
+<li>故の事</li>
+<li>心❤情❤</li>
+</ul>
+</div>
+<div id="w4">
+<ul>
+<li>我们 ╲☆</li>
+<li>微笑❤┆</li>
+<li>回Θ忆</li>
+
+</ul>
+</div>
+<div id="w5">
+<ul>
+<li>~Smile</li>
+<li>致，我们</li>
+<li>逝去的</li>
+<li>青Θ春</li>
+</ul>
+</div>
+<div id="w6">
+<ul>
+<li>ㄗòse，笑</li>
+<li>返┆❤回</li>
+<li>❤┆首页</li>
+</ul>
+</div>
+<div id="w7">
+<ul>
+<li>│◆◇</li>
+<li>说不◆出</li>
+<li>再═见◇</li>
+</ul>
+</div>
+</div>
+<div id="content">
+<div id="w">
+<ul id="us">
+<li><div id="aimg"><img src="smallTalk/1.jpg" /></div><div id="nickName">英纳格:</div><div id="talk">精于心，简于行。</div></li>
+<li><div id="aimg"><img src="smallTalk/2.jpg" /></div><div id="nickName">Burke:</div><div id="talk">静有所思，学有所成。</div></li>
+<li><div id="aimg"><img src="smallTalk/3.jpg" /></div><div id="nickName">Arthur:</div><div id="talk">修合无人见，存心有天知。</div></li>
+<li><div id="aimg"><img src="smallTalk/4.jpg" /></div><div id="nickName">夏日香气:</div><div id="talk">吃了散伙儿饭，坐等毕业</div></li>
+<li><div id="aimg"><img src="smallTalk/5.jpg" /></div><div id="nickName">139537275:</div><div id="talk"></div></li>
+<li><div id="aimg"><img src="smallTalk/6.jpg" /></div><div id="nickName">ΜàΓΚ:</div><div id="talk"></div></li>
+</ul>
+
+</div>
+<div id="aha">
+<ul id="aka">
+<li><div id="aimg"><img src="smallTalk/7.jpg" /></div><div id="nickName">甡侞嗄埖:</div><div id="talk">人无远虑，必有近忧。</div></li>
+<li><div id="aimg"><img src="smallTalk/8.jpg" /></div><div id="nickName">锦毛鼠:</div><div id="talk">眼因多流泪水而愈益清明，心因饱经忧患而愈益温厚</div></li>
+<li><div id="aimg"><img src="smallTalk/9.jpg" /></div><div id="nickName">无风晴:</div><div id="talk">空山鸟语，flipped。</div></li>
+<li><div id="aimg"><img src="smallTalk/10.jpg" /></div><div id="nickName">香茗:</div><div id="talk">智慧是对生活的感悟，是对人生的积淀与思考。</div></li>
+<li><div id="aimg"><img src="smallTalk/11.jpg" /></div><div id="nickName">膤落嘸殸:</div><div id="talk">量力而行</div></li>
+<li><div id="aimg"><img src="smallTalk/12.jpg" /></div><div id="nickName">Soul:</div><div id="talk"></div></li>
+</ul>
+</div>
+</div>
+
+<div id="left">
+</div>
+<div id="leftb">
+</div>
+<div id="right">
+</div>
+<div id="what">
+<ul id="whatul">
+<li><img src="life/1.jpg" /></li>
+<li><img src="life/2.jpg" /></li>
+<li><img src="life/3.jpg" /></li>
+<li><img src="life/4.jpg" /></li>
+<li><img src="life/5.jpg" /></li>
+<li><img src="life/6.jpg" /></li>
+</ul>
+</div>
+<div id="how">
+<ul id="howul">
+<li><img src="life/7.png" /></li>
+<li><img src="life/8.jpg" /></li>
+<li><img src="life/9.jpg" /></li>
+<li><img src="life/10.jpg" /></li>
+<li><img src="life/11.jpg" /></li>
+<li><img src="life/12.jpg" /></li>
+</ul>
+</div>
+<embed src="backgroundMusic/可米小子 - 青春纪念册.mp3" loop="true" hidden="true">
+</body>
+</html>
